@@ -129,5 +129,36 @@
     - Running an Ethereum Client
         - If time and resources are available, you should attempt to run a full node, even if only to learn more about the process.
 
+### Cryptography
+    - important to Ethereum and blockchains alike
+    - branch of mathematics used extensively in computer security
+        - Cryptography in greek means "secret key"
+    - can be used to prove knowledge of a secret without revealing that secret (digital signature) or to prove the authenticity of data (with digital fingerprints, also known as "hashes")
+    - going over public key cryptography (PKC), which is used to control ownership of funds, in the form of private keys and addresses
+
+    - Keys and Addresses
+        - Ethereum has two different types of accounts:
+            - externally owned accounts (EOAs) and contracts
+            - Ownership of ether by EOAs is established through digital private keys, Ethereum addresses, and digital signatures
+            - Private keys are at the heart of all user interaction with Ethereum
+            - Account addresses are derived directly from private keys: a private key uniquely determines a single Ethereum address, also known as an account
+            - Private keys are not used directly in the Ethereum system in any way
+                - Never transmitted or stored on Ethereum
+            - Access and control of funds is achieved with digital signatures, which are also created using the private key.
+            - Ethereum transactions require a valid diital signature to be included in the blockchain
+            - Digital signatures in Ethereum transactions prove the true owner of the funds, if the private key is stored securely and not stolen
+        - In public key cryptography-based systems, keys come in pairs consisting of a private (secret) key and a public key
+        - Public key is similar to a bank account number
+        - Private key as similar to the secret PIN
+            - This provides control over the whole account
+            - They are rarely seen by Ethereum users as they are mananged by the Ethereum wallet
+        - In the payment portion of an Ethereum transaction, the intended recipient is represented by an Ethereum address, which is used in the same way as the beneficiary account details of a bank transfer
+        - An Ethereum address for an EOA is generated from the public key portion of a key pair
+            - Not all Ethereum addresses represent public-private key pairs; can also represent contracts and are not backed by private keys
+
+    - Public Key Cryptography and Cryptocurrency
+        - asymmetric cryptography - a core part of modern-day information security
+        - Public key cryptography uses unique keys to secure 
+
     
 
