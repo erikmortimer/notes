@@ -159,6 +159,47 @@
     - Public Key Cryptography and Cryptocurrency
         - asymmetric cryptography - a core part of modern-day information security
         - Public key cryptography uses unique keys to secure 
+        - A more advanced category of mathematical functions that is useful in cryptography is based on arithmetic operations on an elliptic curve
+        - In elliptic curve arithmetic, multiplication modulo a prime is simple but divsion (the inverse) is practically impossible.
+            - This is called the discrete logarithm problem and there are currently no known trapdoors
+        - Elliptic curve cryptography is used extensively in modern computer systems and is the basis of Ethereum's use private keys and digital signatures.
+        
+        - In Ethereum, we use public key cryptography (asymmetric cryptography) to create the public-private key pair
+        - They are a "pair" because the public key is derived from the private key
+        - Private key controls access by being the unique piece of information needed to create digital signatures
+            - Digital signatures are required to sign transactions to spend any funds in the account
+                - Also used to authenticate owners or users of contracts
+        - Digital signature
+            - created to sign any message
+            - For Ethereum transactions, the details of the transaction itself are used as the message.
+            - The mathematics of cryptography, elliptic curve cryptography, provides a way for the message (transaction details) to be combined with the private key to create a code that can only be produced with knowledge of the private key
+            - Ethereum transaction basically a request to access a particular account with a particular Ethereum address.
+            
+        - Elliptic curve mathematics means that anyone can verify that a transaction is valid, by checking that the digital signature matches the transaction details and the Ethereum address to which access is being requested
+            - Verification doesn't involve the private key at all; that remains private
+            - The verification process determines beyond doubt that the transaction could have only come from someone with the private key that corresponds to the public key behind the Ethereum address.
+                - This is the magic of public key cryptograpy
 
-    
+    - Private keys
+        - a simple number pucked at random.
+        - Ownership and control of the private key is the root of user control over all funds associated with the corresponding Ethereum address, as well as access to contracts that authorize that address.
+
+        - Generating a private key from a random number
+            - find a secure source of entropy(randomness)
+            - Creating a Ethereum private key involves picking a number between 1 and 2^256 
+        - A private key can be converted into a public key, but a public key cannot be converted back into a private key, because the math only works one way
+        
+        - Elliptic Curve Libraries
+            - couple of implementations of the secp256k1 elliptic curve that are used in cryptocurrency-related projects:
+                - OpenSSL
+                - libsecp256k1
+
+    - Cryptographic hash functions
+        - used throughout Ethereum
+        - they are part of the transformation of Ethereum public keys into addresses
+        - also be used to create digital finderprints, which aid in the verification of data
+
+        - hash function - any function that can be used to map data of arbitrary size to data of fixed size
+            - input to hash function is called pre-image, the message, or simply that input data
+        - Cryptographic hash function is a one-way hash function that maps data of arbitrary size to a fixed-size of bits
 
