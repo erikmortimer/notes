@@ -1,4 +1,4 @@
-#Important thoughts about what to do for my next application using Vue and Django (to get some practice using this stack)
+# Important thoughts about what to do for my next application using Vue and Django (to get some practice using this stack)
 
 - Work on the recipe app with Alex
 
