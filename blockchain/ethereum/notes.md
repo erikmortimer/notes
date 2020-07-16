@@ -203,3 +203,43 @@
             - input to hash function is called pre-image, the message, or simply that input data
         - Cryptographic hash function is a one-way hash function that maps data of arbitrary size to a fixed-size of bits
 
+
+# Solidity Notes
+    - view keyword means that functions will not modify state of contract, i.e not modify variables, not emit events, etc.
+    - public and private, external and internal
+        - public and private refer to using functions inside or outside of a contract
+        - internal is the same as private, except that it's also accessible to contacts that inherit from this contract
+        - external is similar to public, except that these functions can ONLY be called outside the contract
+
+    - Immutability of Contracts
+        - Can never modify a contract once it is deployed onto the blockchain
+        - it often makes sense to have functions that will allow you to update key portions of the DApp
+        - common practice to make contracts Ownable - meaing they have an owner who has special privileges
+
+    - Gas
+        - Users but gas with Ether, so your users have to spend ETH in order to execute functions on you DApp
+        - each individual operation has a gas cost based roughly on how much computing resources will be required to perform that operation
+            - ex: writing to storage is much more expensive than adding two integers
+        - code optimization is much more important in Ethereum than in other programming languages
+
+        - struct packing to save gas
+            - if you have multiple uints inside a struct, using a smaller-sized uint whem possible will allow Solidity to pack these variables together to take up less storage
+            - uint 32 a, b and uint c is less than uint a, b, c
+    - Time units
+        - the variable now will return the current unix timestamp of the latest block.
+        - Unix time is traditionally stored in a 32-bit number, but it'll lead to the "Year 2038" problem
+            - when 32-bit unix timestamps will overflow and break a lot of legacy systems.
+    - View functions don't cost gas
+        - when they're called externally by a user
+        - this is because view functions don't actually change anything on the blockchain, they only read the data
+    - Storage is expensive
+        - every thime you write or change a piece of data, it's written permanently to the blockchain.
+        - In order to keep costs down, you want to avoid writing data to storage except when absolutely necessary.
+        - Sometime this involves seemingly inefficient programming logic
+            - rebuilding an array in memory every time a function is called instead of simply saving that array in a variable for quick lookups
+        - a naive implementation of iterating through an array would be to use a mapping
+            - since we would have to push, remove, shift, and reduce the array in order to do something like a transfer function
+                - it would be extremely expensive gas-wise
+            - best solution is to use a for-loop to iterate the array and build an array that belong to the specific owner for example
+
+
