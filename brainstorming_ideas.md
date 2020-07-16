@@ -6,7 +6,7 @@
     - Reddit clone?
     - IM chat app?
     - Video game?
-    - Crypto/stock investing tool with the addition of implementing algorithms to track and analyis prices?
+    - Crypto/stock investing tool with the addition of implementing algorithms to track and analyse prices?
     - Something to organize data, and display critical info
         - Like, the speedrunning application i was thinking about for a while now
         - Or the server finding application
@@ -21,7 +21,8 @@
     - Need to make something that I will personally use on a day to day basis
 
 - Something relating to Minecraft?
-    - But at the sametime I would like to make something talored to Hytale, since I am super hyped about that game
+    - But at the same time I would like to make something tailored to Hytale, since I am super hyped about that game
+
 
 - Something relating to Music
     - A place to share music with friends
